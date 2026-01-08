@@ -1,10 +1,10 @@
 let input = [5, 1, 9, 3];
-let reservoir = 0;
+let maximum = 0;
 
 for (const inp of input) {
-  if (reservoir < inp) {
-    reservoir = inp;
+  if (maximum < inp) {
+    maximum = inp;
   }
 }
 
-console.log(reservoir);
+console.log(maximum);
