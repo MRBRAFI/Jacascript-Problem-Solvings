@@ -3,7 +3,7 @@ let distort = inp.split("");
 let reverseDistortion = distort.reverse();
 let joinDistortion = reverseDistortion.join("");
 
-if (inp.toLowerCase() == joinDistortion.toLowerCase()) {
+if (inp.toLowerCase() === joinDistortion.toLowerCase()) {
   console.log(joinDistortion);
   console.log(true);
 } else {
