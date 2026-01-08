@@ -4,5 +4,3 @@ for (const number of numbers) {
   sum += number;
 }
 console.log(sum);
-
-// console.log(numbers);
