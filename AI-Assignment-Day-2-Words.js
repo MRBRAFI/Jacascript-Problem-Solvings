@@ -3,11 +3,7 @@
 const words = ["apple", "banana", "apricot", "blueberry", "Avocado"];
 
 const initialChecker = (words) => {
-  const initalA = words.filter((word) => {
-    return word.toLowerCase()[0] === "a";
-  });
-
-  return initalA;
+  return words.filter((word) => word.toLowerCase().startsWith("a"));
 };
 
 console.log(initialChecker(words), "From Initial Checker");
@@ -15,10 +11,7 @@ console.log(initialChecker(words), "From Initial Checker");
 // 2 Get length of each word
 
 const lengthChecker = (words) => {
-  const length = words.map((word) => {
-    return `${word} -- word length --> ${word.length}`;
-  });
-  return length;
+  return words.map((word) => word.length);
 };
 
 console.log(lengthChecker(words), "From Length Checking");
@@ -26,11 +19,7 @@ console.log(lengthChecker(words), "From Length Checking");
 // 3 Finding Total length of all words
 
 const totalLength = (words) => {
-  const length = words.reduce((accumulator, nextElement) => {
-    return accumulator + nextElement.length;
-  }, 0);
-
-  return length;
+  return words.reduce((acc, n) => acc + n.length, 0);
 };
 
 console.log(totalLength(words), "From Accumulated Length");

@@ -19,9 +19,7 @@ console.log(squareNum(num), "From Square");
 // 3. Sum of all numbers
 
 const sumOfNums = (num) => {
-  return num.reduce((accumulator, nextEliment) => {
-    return accumulator + nextEliment;
-  }, 0);
+  return num.reduce((acc, n) => acc + n, 0);
 };
 
 console.log(sumOfNums(num), "From Sum By reduce()");
@@ -29,11 +27,7 @@ console.log(sumOfNums(num), "From Sum By reduce()");
 // 4 Sum of all even numbers
 
 const sumOfEven = (num) => {
-  return num
-    .filter((int) => int % 2 === 0)
-    .reduce((accumulator, nextElement) => {
-      return accumulator + nextElement;
-    }, 0);
+  return num.filter((int) => int % 2 === 0).reduce((acc, n) => acc + n, 0);
 };
 
 console.log(sumOfEven(num), "From Sum Of Even");
