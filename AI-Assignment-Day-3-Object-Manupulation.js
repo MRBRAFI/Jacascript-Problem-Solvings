@@ -10,15 +10,19 @@ const students = [
 // Expected output: 87.6
 
 const getAverage = (students) => {
-  return Math.round(
-    students.reduce((acc, n) => acc + n.marks, 0) / students.length,
-  );
+  return students.reduce((acc, n) => acc + n.marks, 0) / students.length;
 };
 
-console.log(getAverage(students));
+console.log(getAverage(students), "From Average Output");
 
 // Problem 2: Get all students who scored above 85
 // Expected output: Array of 3 student objects
+
+const topStudents = (students) => {
+  return students.filter((top) => top.marks > 85);
+};
+
+console.log(topStudents(students));
 
 // Problem 3: Get array of just student names
 // Expected output: ['Rafi', 'Sarah', 'John', 'Emma', 'Ali']
