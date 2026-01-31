@@ -40,7 +40,14 @@ console.log(getNames(students), "From Getting Student Names");
 // Expected output: { name: 'Ali', marks: 95, subject: 'Math' }
 
 const getTheHighest = (students) => {
-  return students.reduce((reservoir, student) => (reservoir = student), 0);
+  return students.reduce((reservoir, student) => {
+    if (!reservoir) {
+      reservoir = student;
+    } else if (reservoir.marks < student.marks) {
+      reservoir = student;
+    }
+    return reservoir;
+  });
 };
 
 console.log(getTheHighest(students), "From The Topper");
@@ -48,5 +55,28 @@ console.log(getTheHighest(students), "From The Topper");
 // Problem 5: Calculate average marks for Math students only
 // Expected output: 86
 
+const mathStudents = (students) => {
+  const mathStudents = students.filter((student) => student.subject === "Math");
+  return (
+    mathStudents.reduce((reservoir, student) => reservoir + student.marks, 0) /
+    mathStudents.length
+  );
+};
+
+console.log(mathStudents(students), "From Maths Students");
+
 // Problem 6: Group students by subject
 // Expected output: Object with Math and Science arrays
+
+const groupStudents = (students) => {
+  return students.reduce((reservoir, student) => {
+    const subject = student.subject;
+    if (!reservoir[subject]) {
+      reservoir[subject] = [];
+    }
+
+    reservoir[subject].push(student.name);
+    return reservoir;
+  }, {});
+};
+console.log(groupStudents(students));
