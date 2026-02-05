@@ -1,19 +1,5 @@
-function orderFood() {
-  return (myOrder = new Promise((resolve, reject) => {
-    const ranNum = Math.ceil(Math.random() * 10);
+const names = ["arif", "gabru", "bhebla", "gobirul", "aminul", "Abidul"];
 
-    if (ranNum < 8) {
-      resolve("Pizza Delivered");
-    } else {
-      reject("Restaurant Closed");
-    }
-  }));
-}
+const filteredNames = names.filter((name) => name[0].toLowerCase() === "a");
 
-orderFood()
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+console.log(filteredNames);
