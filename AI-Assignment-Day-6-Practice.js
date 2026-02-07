@@ -1,28 +1,52 @@
-const isValid = (arr) => {
-  const pair = {
-    ")": "(",
-    "}": "{",
-    "]": "[",
-  };
+// 1. using unshift method
 
+const revers1 = (strs1) => {
   const stack = [];
 
-  let char = "";
-
-  for (let i = 0; i < arr.length; i++) {
-    char = arr[i];
-
-    if (char === "(" || char === "{" || char === "[") {
-      stack.push(char);
-    } else if (char === ")" || char === "}" || char === "]") {
-      let lastCheck = stack.pop();
-
-      if (pair[char] !== lastCheck) {
-        return false;
-      }
-    }
+  for (const str of strs1) {
+    stack.unshift(str);
   }
-  return stack.length === 0;
+
+  return stack.join("");
 };
 
-console.log(isValid("[}[}[")); // true
+console.log(revers1("stack"));
+
+// 2. using reverse counting method
+
+const reverse2 = (strs2) => {
+  const stack = [];
+
+  let reverseCount = "";
+
+  for (const str of strs2) {
+    stack.push(str);
+  }
+
+  for (let i = stack.length - 1; i >= 0; i--) {
+    reverseCount += stack[i];
+  }
+
+  return reverseCount;
+};
+
+console.log(reverse2("stack"));
+
+// using prince of persia (pop) method
+
+const reverse3 = (strs3) => {
+  const stack = [];
+
+  let reverser = "";
+
+  for (const str of strs3) {
+    stack.push(str);
+  }
+
+  for (let i = stack.length - 1; i >= 0; i--) {
+    reverser += stack.pop();
+  }
+  return reverser;
+};
+
+console.log(reverse3("hello"));

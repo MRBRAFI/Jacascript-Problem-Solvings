@@ -1,33 +1,10 @@
-function isValid(s) {
-  const pairs = {
-    ")": "(",
-    "}": "{",
-    "]": "[",
-  };
+let n = 0;
 
-  const stack = [];
-
-  for (let i = 0; i < s.length; i++) {
-    const char = s[i];
-
-    if (char === "(" || char === "{" || char === "[") {
-      stack.push(char);
-    } else if (char === ")" || char === "}" || char === "]") {
-      const lastOpening = stack.pop();
-
-      if (pairs[char] !== lastOpening) {
-        return false;
-      }
-    }
-  }
-
-  return stack.length === 0;
+while (n <= 3) {
+  console.log(n);
+  n++;
 }
 
-// Test it:
-console.log(isValid("()")); // true
-console.log(isValid("[(}()]")); // false
-console.log(isValid("()[]{}")); // true
-console.log(isValid("(]")); // false
-console.log(isValid("([)]")); // false
-console.log(isValid("{[]}")); // true
+for (let i = 0; i <= 3; i++) {
+  console.log(i);
+}
