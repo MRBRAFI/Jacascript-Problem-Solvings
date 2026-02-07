@@ -32,7 +32,7 @@ const reverse2 = (strs2) => {
 
 console.log(reverse2("stack"));
 
-// using prince of persia (pop) method
+// using revised prince of persia (pop) method
 
 const reverse3 = (strs3) => {
   const stack = [];
@@ -43,7 +43,7 @@ const reverse3 = (strs3) => {
     stack.push(str);
   }
 
-  for (let i = stack.length - 1; i >= 0; i--) {
+  while (stack.length > 0) {
     reverser += stack.pop();
   }
   return reverser;
